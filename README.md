@@ -4,7 +4,7 @@ Este es un proyecto de demostración de un **Agente RAG (Retrieval-Augmented Gen
 
 Construido sobre la última versión de **Next.js 16 (App Router)** y **LangChain.js**, este proyecto destaca una arquitectura moderna, limpia y Serverless-ready.
 
-![Project Preview](/project-preview.png) _(Reemplazar con captura si disponible)_
+![Project Preview](public/project-preview.png)
 
 ## 🚀 Características Principales
 
