@@ -41,7 +41,9 @@ export const getAgent = async () => {
     "https://paulgraham.es/ensayos/los-18-errores-que-matan-a-las-startups.html",
     "https://paulgraham.es/ensayos/como-son-en-realidad-las-startups.html",
     "https://www.chileatiende.gob.cl/fichas/53234-creacion-de-empresas-en-un-dia",
-    "https://www.bcn.cl/portal/leyfacil/recurso/estatuto-de-las-pymes"
+    "https://www.bcn.cl/portal/leyfacil/recurso/estatuto-de-las-pymes",
+    "https://www.sii.cl/siieduca/aprende-con-nosotros/inicio-de-actividades-y-formalizacion-de-un-negocio.html",
+    "https://www.inapi.cl/portal/institucional/600/w3-article-578.html",
   ];
 
   const pTagSelector = "p";
