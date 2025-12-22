@@ -40,7 +40,8 @@ export const getAgent = async () => {
     "https://paulgraham.es/ensayos/ideas-organicas-para-startups.html",
     "https://paulgraham.es/ensayos/los-18-errores-que-matan-a-las-startups.html",
     "https://paulgraham.es/ensayos/como-son-en-realidad-las-startups.html",
-    "https://www.chileatiende.gob.cl/fichas/53234-creacion-de-empresas-en-un-dia"
+    "https://www.chileatiende.gob.cl/fichas/53234-creacion-de-empresas-en-un-dia",
+    "https://www.bcn.cl/portal/leyfacil/recurso/estatuto-de-las-pymes"
   ];
 
   const pTagSelector = "p";
