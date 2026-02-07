@@ -1,0 +1,36 @@
+(node:29612) ExperimentalWarning: Support for loading ES Module in require() is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: app-langchain-sql@0.1.0
+npm error Found: @langchain/core@1.1.7
+npm error node_modules/@langchain/core
+npm error   peer @langchain/core@"^1.0.0" from @langchain/classic@1.0.7
+npm error   node_modules/@langchain/classic
+npm error     @langchain/classic@"1.0.7" from @langchain/community@1.1.1
+npm error     node_modules/@langchain/community
+npm error       @langchain/community@"^1.1.1" from the root project
+npm error     @langchain/classic@"^1.0.7" from the root project
+npm error   peer @langchain/core@"^1.0.0" from @langchain/community@1.1.1
+npm error   node_modules/@langchain/community
+npm error     @langchain/community@"^1.1.1" from the root project
+npm error   7 more (@langchain/langgraph, ...)
+npm error
+npm error Could not resolve dependency:
+npm error @langchain/google-genai@"*" from the root project
+npm error
+npm error Conflicting peer dependency: @langchain/core@1.1.16
+npm error node_modules/@langchain/core
+npm error   peer @langchain/core@"1.1.16" from @langchain/google-genai@2.1.11
+npm error   node_modules/@langchain/google-genai
+npm error     @langchain/google-genai@"*" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error C:\Users\arman\AppData\Local\npm-cache\_logs\2026-01-22T19_00_53_567Z-eresolve-report.txt
+npm error A complete log of this run can be found in: C:\Users\arman\AppData\Local\npm-cache\_logs\2026-01-22T19_00_53_567Z-debug-0.log

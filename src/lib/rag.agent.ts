@@ -9,6 +9,7 @@ import { tool } from "@langchain/core/tools";
 import { SystemMessage } from "@langchain/core/messages";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { Document } from "@langchain/core/documents";
+import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 
 // Singleton to avoid re-initializing on every request
 let agentInstance: any = null;
@@ -23,15 +24,23 @@ export const getAgent = async () => {
     throw new Error('OPENAI_API_KEY is not set');
   }
 
-  const model = new ChatOpenAI({
-    model: process.env.OPENAI_MODEL ?? 'gpt-4o',
-    temperature: parseFloat(process.env.OPENAI_TEMPERATURE ?? '0'),
-    apiKey,
+  
+  // const model = new ChatOpenAI({
+  //   model: process.env.OPENAI_MODEL ?? 'gpt-4o',
+  //   temperature: parseFloat(process.env.OPENAI_TEMPERATURE ?? '0'),
+  //   apiKey,
+  // });
+  
+  
+  const model = new ChatGoogleGenerativeAI({
+    model: "gemini-2.5-flash", 
+    apiKey: process.env.GOOGLE_API_KEY, 
+    maxOutputTokens: 2048,
   });
 
   const embeddings = new OpenAIEmbeddings({
     model: "text-embedding-3-large",
-    apiKey,
+    //apiKey,
   });
 
   // Load documents
