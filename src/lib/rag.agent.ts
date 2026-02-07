@@ -25,22 +25,22 @@ export const getAgent = async () => {
   }
 
   
-  // const model = new ChatOpenAI({
-  //   model: process.env.OPENAI_MODEL ?? 'gpt-4o',
-  //   temperature: parseFloat(process.env.OPENAI_TEMPERATURE ?? '0'),
-  //   apiKey,
-  // });
-  
-  
-  const model = new ChatGoogleGenerativeAI({
-    model: "gemini-2.5-flash", 
-    apiKey: process.env.GOOGLE_API_KEY, 
-    maxOutputTokens: 2048,
+  const model = new ChatOpenAI({
+    model: process.env.OPENAI_MODEL ?? 'gpt-4o',
+    temperature: parseFloat(process.env.OPENAI_TEMPERATURE ?? '0'),
+    apiKey,
   });
+  
+  
+  // const model = new ChatGoogleGenerativeAI({
+  //   model: "gemini-2.5-flash", 
+  //   apiKey: process.env.GOOGLE_API_KEY, 
+  //   maxOutputTokens: 2048,
+  // });
 
   const embeddings = new OpenAIEmbeddings({
     model: "text-embedding-3-large",
-    //apiKey,
+    apiKey,
   });
 
   // Load documents
