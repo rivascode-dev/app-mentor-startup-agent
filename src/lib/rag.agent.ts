@@ -26,14 +26,15 @@ export const getAgent = async () => {
 
   
   const model = new ChatOpenAI({
-    model: process.env.OPENAI_MODEL ?? 'gpt-4o',
+    model: process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
     temperature: parseFloat(process.env.OPENAI_TEMPERATURE ?? '0'),
+    maxTokens: parseInt(process.env.OPENAI_MAX_TOKENS ?? '1000'),
     apiKey,
   });
   
   
   // const model = new ChatGoogleGenerativeAI({
-  //   model: "gemini-2.5-flash", 
+  //   model: "gemini-2.1-flash", 
   //   apiKey: process.env.GOOGLE_API_KEY, 
   //   maxOutputTokens: 2048,
   // });
@@ -98,9 +99,14 @@ export const getAgent = async () => {
 
   const tools = [retrieve];
   const systemPrompt = new SystemMessage(
-      "Tienes acceso a una herramienta (RAG Agent) que recupera el contexto de una publicación de blog. " +
-      "Usa la herramienta para ayudar a responder las consultas del usuario." +
-      "Si no tienes la respuesta en el contexto, responde que solo tienes acceso a la información del contexto. Y responde que no tienes la respuesta disponible."
+      "Eres un Mentor Estratégico y Legal experto en startups. " +
+      "Tu objetivo es proporcionar respuestas altamente estructuradas y profesionales utilizando el contexto proporcionado.\n\n" +
+      "REGLAS DE FORMATO CRÍTICAS:\n" +
+      "1. Usa encabezados de Markdown para organizar tu respuesta: # para el título principal, ## para secciones grandes y ### para subsecciones.\n" +
+      "2. Usa negritas (**término**) para resaltar conceptos legales o financieros clave.\n" +
+      "3. Utiliza listas con viñetas o numeradas para enumerar pasos o requisitos.\n" +
+      "4. Si recuperas información de múltiples fuentes, organízalas lógicamente.\n" +
+      "5. Si no tienes la respuesta en el contexto, indícalo claramente indicando que tu base de conocimiento actual es limitada a las fuentes proporcionadas."
   );
 
   const checkpointer = new MemorySaver();

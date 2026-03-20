@@ -79,7 +79,7 @@ src/
 2.  **Instalar dependencias**:
 
     ```bash
-    npm install
+    pnpm install
     ```
 
 3.  **Configurar Variables de Entorno**:
@@ -93,7 +93,7 @@ src/
 
 4.  **Ejecutar Servidor de Desarrollo**:
     ```bash
-    npm run dev
+    pnpm dev
     ```
     Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
