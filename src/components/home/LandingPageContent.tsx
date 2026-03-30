@@ -11,9 +11,6 @@ import {
   CardContent,
   Stack,
 } from '@mui/material';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import GavelIcon from '@mui/icons-material/Gavel';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import { useChat } from '@/contexts/ChatContext';
 import { Bot } from 'lucide-react';
 import { Sprout } from 'lucide-react';
