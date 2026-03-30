@@ -1,7 +1,6 @@
 import { Avatar, Box, IconButton, Typography } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import AssistantIcon from '@mui/icons-material/Assistant';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { Bot } from 'lucide-react';
+import { CircleX } from 'lucide-react';
 
 interface ChatWidgetHeaderProps {
   onClose: () => void;
@@ -9,31 +8,35 @@ interface ChatWidgetHeaderProps {
 
 export const ChatWidgetHeader = ({ onClose }: ChatWidgetHeaderProps) => {
   return (
-    <Box sx={{ p: 1, backgroundColor: 'white', borderBottom: '1px solid', borderColor: 'grey.300' }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-        <IconButton
-          onClick={onClose}
-          size='small'
-        >
-          <CloseIcon />
+    <Box
+      sx={{
+        p: 1,
+        backgroundColor: 'white',
+        borderBottom: '1px solid',
+        borderColor: 'grey.300',
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <IconButton onClick={onClose} size='small'>
+          <CircleX color='black' size={30} />
         </IconButton>
       </Box>
       <Box sx={{ px: 1, display: 'flex', alignItems: 'center' }}>
         <Avatar sx={{ bgcolor: 'primary.main', mr: 2 }}>
-          <AutoAwesomeIcon sx={{ color: 'white',  }} />
+          <Bot color='white' size={30} />
         </Avatar>
         <Box>
-          <Typography
-            variant='subtitle2'
-            fontWeight='bold'
-          >
-            AGENTE DE IA
+          <Typography variant='subtitle2' fontWeight='bold'>
+            TU MENTOR ESTRATEGICO
           </Typography>
-          <Typography
-            variant='caption'
-            color='text.secondary'
-          >
-            Normalmente responde instantáneamente
+          <Typography variant='caption' color='text.secondary'>
+            Respuestas precisas para construir, legalizar y escalar tu startup.
           </Typography>
         </Box>
       </Box>

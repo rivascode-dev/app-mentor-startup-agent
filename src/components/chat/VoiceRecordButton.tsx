@@ -1,8 +1,8 @@
 'use client';
 import { useEffect } from 'react';
 import { IconButton, CircularProgress, Tooltip } from '@mui/material';
-import MicIcon from '@mui/icons-material/Mic';
-import MicOffIcon from '@mui/icons-material/MicOff';
+import { Mic } from 'lucide-react';
+import { MicOff } from 'lucide-react';
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
 
 interface VoiceRecordButtonProps {
@@ -16,12 +16,19 @@ export const VoiceRecordButton = ({
   onRecordingStateChange,
   disabled = false,
 }: VoiceRecordButtonProps) => {
-  const { isListening, transcript, error, startListening, stopListening, resetTranscript, hasRecognitionSupport } =
-    useSpeechRecognition((isRecording: boolean) => {
-      if (onRecordingStateChange) {
-        onRecordingStateChange(isRecording);
-      }
-    });
+  const {
+    isListening,
+    transcript,
+    error,
+    startListening,
+    stopListening,
+    resetTranscript,
+    hasRecognitionSupport,
+  } = useSpeechRecognition((isRecording: boolean) => {
+    if (onRecordingStateChange) {
+      onRecordingStateChange(isRecording);
+    }
+  });
 
   useEffect(() => {
     // Cuando se completa la transcripción, enviarla al componente padre
@@ -40,7 +47,7 @@ export const VoiceRecordButton = ({
             disabled={true}
             aria-label='Micrófono no soportado'
           >
-            <MicOffIcon />
+            <MicOff />
           </IconButton>
         </span>
       </Tooltip>
@@ -48,7 +55,9 @@ export const VoiceRecordButton = ({
   }
 
   return (
-    <Tooltip title={isListening ? 'Detener grabación' : 'Hablar para enviar mensaje'}>
+    <Tooltip
+      title={isListening ? 'Detener grabación' : 'Hablar para enviar mensaje'}
+    >
       <IconButton
         color={isListening ? 'error' : 'primary'}
         onClick={isListening ? stopListening : startListening}
@@ -57,13 +66,15 @@ export const VoiceRecordButton = ({
         sx={{
           position: 'relative',
           '&:hover': {
-            backgroundColor: isListening ? 'rgba(211, 47, 47, 0.04)' : 'rgba(25, 118, 210, 0.04)',
+            backgroundColor: isListening
+              ? 'rgba(211, 47, 47, 0.04)'
+              : 'rgba(25, 118, 210, 0.04)',
           },
         }}
       >
         {isListening ? (
           <>
-            <MicIcon />
+            <Mic />
             <CircularProgress
               size={44}
               thickness={2}
@@ -77,7 +88,7 @@ export const VoiceRecordButton = ({
             />
           </>
         ) : (
-          <MicIcon sx={{ fontSize: '35px' }} />
+          <Mic />
         )}
       </IconButton>
     </Tooltip>

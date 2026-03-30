@@ -2,9 +2,11 @@
 import { ReactNode } from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Box } from '@mui/material';
 import { ChatWidget } from '@/components/chat/ChatWidget';
 import { ChatProvider } from '@/contexts/ChatContext';
+
+import Footer from '@/layouts/Footer';
 
 const theme = createTheme({
   palette: {
@@ -28,7 +30,12 @@ const RootLayoutProvider = ({ children }: RootLayoutProviderProps) => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <ChatProvider>
-          {children}
+          <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <Box component="main" sx={{ flexGrow: 1 }}>
+              {children}
+            </Box>
+            <Footer />
+          </Box>
           <ChatWidget />
         </ChatProvider>
       </ThemeProvider>
