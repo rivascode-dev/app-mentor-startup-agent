@@ -16,10 +16,10 @@ export const ChatWidget = () => {
           elevation={8}
           sx={{
             position: 'fixed',
-            bottom: { xs: 170, md: 90 },
-            right: { xs: '5%', md: '2%' },
-            width: { xs: '90%', md: '45%' },
-            height: { xs: '80vh', md: '85vh' },
+            bottom: { xs: 16, md: 20 },
+            right: { xs: 16, md: 20 },
+            width: { xs: 'calc(100% - 32px)', md: 450 },
+            height: { xs: '85vh', md: '85vh' },
             display: 'flex',
             flexDirection: 'column',
             borderRadius: '16px',
